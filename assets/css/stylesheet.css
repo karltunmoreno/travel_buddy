@@ -1,6 +1,6 @@
 /*Keeping the root for CLC to establish a color palette via variables-changing colors at will */
 :root {
-    --primary-color: #ce22c0;
+    --primary-color: rgb(235, 188, 35);
     --secondary-color: #024e76;
     --tertiary-color: #39a6b2;
 }
@@ -97,7 +97,7 @@ header h1 {
     color: var(--primary-color);
     margin: 0;
     display: inline;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-shadow: 0 0 10px rgba(0,0,0,0.75);
 }
     
 /* Specify the style of the footer so more items can be added in the future*/
@@ -105,7 +105,7 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: rgba(206, 34, 192, 0.75);
+    background-color: rgba(235, 188, 35, 0.5);
     width: 100%;
     padding: 40px 35px
 }
@@ -249,7 +249,7 @@ article p {
     /*Move border info to the top */
     border: 3px solid var(--secondary-color);
     /*  Change hex to rgb to include transparency for final */
-    background-color: rgba(206, 34, 192, 0.5);
+    background-color: rgba(235, 188, 35, 0.75);
     padding: 20px;
    /* width removed and replaced for flexbox */
     width: 50%;
@@ -321,7 +321,7 @@ article p {
 /*CLC experiment add specs for p section*/
 .lens p {
     line-height: 1.7;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
     width: 90%;
     font-size: 20px;
     margin: 0 auto;
@@ -464,6 +464,7 @@ article {
 
 .lens img {
     border-radius: 15px;
+    opacity: .85;
     box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
 }
 
