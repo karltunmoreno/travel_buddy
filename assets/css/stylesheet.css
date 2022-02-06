@@ -1,0 +1,514 @@
+/*Keeping the root for CLC to establish a color palette via variables-changing colors at will */
+:root {
+    --primary-color: rgb(235, 188, 35);
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
+
+body {
+    /* CLC Experiment results-this seems ok to keep from existing */
+    color: var(--tertiary-color);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* CLC Experiment results-this seems ok to keep from existing */
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Experiment results-this seems ok to keep from existing: apply styles to the <header>
+update-adding display flex and justify content space between*/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 35px;
+    background-color: var(--tertiary-color);
+    /* Added sticky positions and background styles from .hero to header for 2.4.0 version */
+    position: -webkit-sticky;
+    position:sticky;
+    top: 0;
+    /*redirect filename to match*/
+    background-image: url("../Images/lens.jpeg");
+    background-size: cover;
+    /*Change b-p from center to 80% for final */
+    background-position: 80%;
+    /*Add b-attachment fixed to match image with LENS section */
+    background-attachment: fixed;
+    /*Add a high z-index to make sure new elements do not float in front of this header's sticky position */
+    z-index: 9999;
+}
+
+/* there are two header children, h1 and nav. h1 is the name, now CLC:... and nav is the nav bar 
+Addedd margin and removed display inline-but I only have it in header nav ul li 
+Adding text shadow for final*/
+header h1 {
+    font-weight: bold;
+    margin: 0;
+    font-family: 36px;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* The header also has a specific <a> tag or hyperlink so the above code 
+doesn't work unless you overide the default look for <a> tags. The text-decoration
+as none allows you to remove the hypertext color and underline. 
+Then, you assign the color to match h1 text coded above.  */
+header a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* Use the next style to send the nav info to the right instead of the default HTML left. 
+No need to float right=NA with flexbox*/
+header nav {
+    margin: 7px 0;
+}
+
+/* Now make the nav titles listed organize from L to R instead of the default top to bottom, 
+apply flexbox, and make a new header nav ul*/
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+/* Specify the hypertext <a> tag elements inside the list inside the unordered list 
+in the navigation inside the header specifications as the following to give them each an
+aesthetic spacing, font style, and the font-size to 1.55 vw or viewport width*/
+header nav ul li a {
+    /* replaced margin with padding for mediaquery styling 2.3.0 */
+    padding: 10px 15px;
+    font-weight: lighter;
+    font-size: 1.55vw;
+    /*adding text shadow 2.4.0*/
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* The header h1 now needs to become inline instead of a block to sit nicely
+with the nav list you previously made inline. */
+header h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: var(--primary-color);
+    margin: 0;
+    display: inline;
+    text-shadow: 0 0 10px rgba(0,0,0,0.75);
+}
+    
+/* Specify the style of the footer so more items can be added in the future*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(235, 188, 35, 0.5);
+    width: 100%;
+    padding: 40px 35px
+}
+
+/* remove float right for flexbox specs *
+footer div {
+    line-height: 1.5;
+    text-align: right;
+}
+    
+/* Now style the <a> element inside the <div> container. *
+footer a {
+    color: var(--secondary-color);
+}
+
+/*--Add a universal padding value for all sections */
+section {
+    padding: 60px;
+}
+
+section p {
+    font-size: 24px;
+    font-style: italic;
+    font-weight: bolder;
+    line-height: 1.5;
+    padding-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+    
+/* LENS Style Start */
+/* overall declarations in basic version, but position and height removed for flexbox specs*/    
+.lens {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url("../Images/lens.jpeg");
+    /* height removed NA flexbox */
+    background-size: cover;
+    /*Change b-p from center to 80% for final */
+    background-position: 80%;
+    /*Add b-attachment fixed to match image with header section */
+    background-attachment: fixed;
+    /* Add position relative to the hero section to position the hero-form. NA with 2.0 flexbox */
+    /* Add align-items flex-start for mediaquery version */
+    align-items: flex-start;
+}
+
+/* Changed .lens-BIO and .lens-CONTACT to article element be DRY-kept .lens-PROJECTS as unique */
+article {
+    width: 35%;
+    text-align: center;
+    /*check and note old margin margin: 5px 0 15px 0;*/
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    /* Change l-h from 1.3 to 1.2 for mediaquery version */
+    line-height: 1.2;
+    /*adding text shadow for final*/
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* This definition was in the middle and showed as an error-repeating here to update*/
+article {
+    /* Remove text-align for flexbox specs */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+/* Add hero-cta header h2 style for 2.0 */
+article h2 {
+    font-style: italic;
+    font-size: 55px;
+    color: var(--primary-color);
+}
+
+/*Add styles to Images*/
+.bio-img img {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/*--CLC changes made-Hero-Form Style Start version 2.0 deletions noted below*/
+.lens-PROJECTS {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*Move border info to the top */
+    border: 3px solid var(--secondary-color);
+    /*  Change hex to rgb to include transparency */
+    background-color: rgba(57, 166, 178, 0.75);
+    padding: 20px;
+   /* width NA with flexbox */
+    width: 40%;
+    color: var(--secondary-color);
+    /*position info after color -NA with flexbox */
+    margin: 3.5%;
+     /*add shadow and rounded corners for 2.4.0 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+     /*keep rounded corners*/
+    border-radius: 20px;
+}
+
+/* Add header h2 style for Projects */
+.lens-PROJECTS h2 {
+    font-style: italic;
+    font-size: 55px;
+    color: var(--primary-color);
+    align-items:center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Attempt DRY- change the font-size and margin as needed */
+article h3 {
+    font-size: 24px;
+    align-items:center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/*CLC image styles*/
+article img {
+    flex: 1 12%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+article p {
+    max-width: 100%;
+}
+
+/*--CLC changes made-Hero-Form into PROJECTS and kept/added notes below*/
+.lens-PROJECTS {
+    /*Move border info to the top */
+    border: 3px solid var(--secondary-color);
+    /*  Change hex to rgb to include transparency for final */
+    background-color: rgba(235, 188, 35, 0.75);
+    padding: 20px;
+   /* width removed and replaced for flexbox */
+    width: 50%;
+    color: #fff;
+    font-size: 18px;
+    /*check old margin margin: 5px 0 15px 0;*/
+    margin: 3.5%;
+     /*add shadow and rounded corners for 2.4.0 */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 15px;
+}
+
+.lens-PROJECTS h2 {
+    font-size: 55px;
+    font-style: italic;
+    color: var(--secondary-color); 
+}
+
+.lens-PROJECTS a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color:#fff;
+}
+
+/*CLC Images styles article vs project section specific-run buddy highlighted*/
+.PROJECT-1 img {
+    max-width: 100%;
+}
+
+.BIO-2 img {
+    max-width: 100%;
+}
+
+.CONTACT-2  {
+    padding: 0 35px 0 35px;
+}
+
+.CONTACT-2 a {
+    text-decoration: none;
+    color: var(--tertiary-color);
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.lens-CONTACT {
+    text-align: right;
+    padding: 25px;
+}
+
+/* Below-commented-out is NA right now for CLC-portfolio, but it remains to maybe add later*/
+
+/*CLC experiment- repeating here to test the hierarchy*
+.lens {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url("../Images/lens.jpg");
+    background-size: cover;
+    background-position: 80%;
+    /*Add b-attachment fixed to match image with header section *
+    background-attachment: fixed;
+    /* Add align-items flex-start for mediaquery *
+    align-items: flex-start;
+}*/
+/* LENS STYLES END */
+
+/*CLC experiment add specs for p section*/
+.lens p {
+    line-height: 1.7;
+    color: var(--secondary-color);
+    width: 90%;
+    font-size: 20px;
+    margin: 0 auto;
+    /* Add text-align for 2.0 flexbox specs *
+    text-align: center;*/
+}
+
+/* This definition was in the middle testing it in the end*/
+article {
+    /* Remove text-align for flexbox specs */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+/* Keeping media query for CLC*/
+@media screen and (max-width: 980px) {
+    
+    header {
+        padding-bottom: 0;
+        justify-content: center;
+        /* Keeping a relative position to negate the sticky header rule for 2.4.0 with smaller screens */
+        position: relative;
+    }
+
+    header h1 {
+    width: 100%;
+    text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+    font-size: 20px;
+    }
+
+    /*CLC-no footer div here but add it back if it becomes more complex*/
+    footer h4 {
+        color: var(--tertiary-color);
+        font-size: 18px;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+    }
+    
+    /*CLC-change .hero-cta, .hero-form to .lens or article-
+    Note if you add a form in the future, separate width and 
+    text-align center from the form bec. the form is off center.
+    CLC adding all under article-commenting out r-b for future ref */
+    article {
+        width: 100%;
+        text-align: center;
+        flex: 0 70%;
+    }
+
+    article h3, a {
+        width: 80%;
+    }
+
+    .lens-CONTACT h2, h3, p, a {
+        text-align: center;
+        flex-direction: column;
+        flex: 0 50%;
+    }
+
+
+    article img {
+        flex: 1 12%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        width: 100%;
+    }
+
+    article h3, a {
+        flex: 2 100%;
+        text-align: center;
+    }
+
+    .lens img {
+        width: 75%;
+    }
+
+    article img {
+        flex: 0 32%;
+        margin: 0 auto;
+    }
+
+    .PROJECT-1 img {
+        width: fit-content;
+    }
+
+    article p {
+        flex: 100%;
+    }
+   
+}
+
+@media screen and (max-width: 575px) {
+
+    .lens img {
+        width: 75%;
+    }
+
+    article img {
+        width: 85%;
+    }
+
+    .PROJECT-1 img {
+        width: fit-content;
+    }
+
+    article h2 {
+        font-size: 30px;
+    }
+
+    .lens-PROJECTS h2 {
+        font-size: 30px;
+    }
+
+    section {
+        width: auto;
+    }
+
+}
+
+.lens img {
+    border-radius: 15px;
+    opacity: .95;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+}
+
+/* heart emoji fix*/
+.heart {
+    color: red;
+    font-weight: normal;
+}
+
+/* Adding flex-row class style for final */
+.flex-row {
+    display: flex;
+}
+
+/* Keeping pseudoclasses for CLC */
+header nav ul li a:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+/* Adding a psuedoclass for CLC project links*/
+.PROJECT-1 a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+.PROJECT-2 a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+/* This definition was in the middle testing it in the end*/
+article {
+    /* Remove text-align for flexbox specs */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px;
+}
