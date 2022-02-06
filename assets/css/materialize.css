@@ -9083,3 +9083,24 @@ input[type=range]::-ms-thumb {
     margin-top: 1.2rem;
   }
 }
+
+form {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+form input {
+  outline: none;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 2.2rem;
+  border: 2px solid var(--grey);
+  border-radius: 12px;
+}
+
+form .form-group {
+  margin: 10px 6px 10px 0;
+  flex: 1;
+}

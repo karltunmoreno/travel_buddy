@@ -39,71 +39,165 @@
         </header>
     <!--ADDING TEST HTML AND CSS TEMPLATES HERE-->
 		<section class="lens">
+			<!--ADDING A FORM ELEMENT TO INPUT THE CITY-->
+			<form>
+                <label for="name"> Enter the name of a City</label>
+                <!--To style each input line give them a specific class of form-input added after id-->
+                <input type="text" placeholder="Your City" name="name" id="name" class="form-input" style="font-size: xx-large;"/>
+			</form>
 			<!--Adding a famous quote from Robert Frost-->
 			<p>"Two roads diverged in a wood, and I—
 				I took the one less traveled by,
 				And that has made all the difference." </br>
 		
-				-Robert Frost, from the poem 'The Road Not Taken'.</p>
-			<img src="./assets/Images/lens.jpeg" alt="An image of a compass over water">
+				-Robert Frost, from the poem 'The Road Not Taken'.</p>-->
+			<!--<img src="./assets/Images/lens.jpeg" alt="An image of a compass over water">-->
 			<!--The section will have three <div> containers for BIO, PROJECTS, and CONTACT-->
 				<!--Add id to link to nav-->
 				<article id="BIO" class="lens-BIO">
 					<h2>TTD:CITIES</h2>
 					<!--CLC leaving the original names in code to keep the CSS link and test the idea-->
+					<!--INSERT FLICKRR API-->
 					<div class="BIO-2">
-						<h3>Wynwood Miami</h3>
+						<h3>Pics of Your City</h3>
+						<iframe 
+							id="player" 
+						   	type="text/html" 
+						   	width="370" height="225"
+							src="http://www.xyz.com"
+							frameborder="0">
+						</iframe>
+						<!--<h3>Wynwood Miami</h3>-->
 						<!--Start in Miami -->
-						<p>
+						<!--<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor quam eveniet 
 							fugit omnis ut? Itaque ipsum sapiente numquam incidunt, quam voluptates unde quia sed 
 							dolorum temporibus ut, dignissimos nemo?
-						</p>
-						<div class="bio-img">
+						</p>-->
+						<!--<div class="bio-img">-->
                              <!--update for api link-->
-							<img src="./assets/Images/bio-2.jpg" alt="A close-up of Christi smiling on New Year's Eve 2021">
-						</div>
+							<!--<img src="./assets/Images/bio-2.jpg" alt="A picture of building murals in Wynwood Miami">
+						</div>-->
 								
 					</div>
 					<div class="BIO-1">
-                         <!--update for api link-->
+                        <!--update for YOUTUBE api link HAILMARY IF CLC HAS TIME-->
+						<!--<iframe 
+						 	id="player" 
+							type="text/html" 
+							width="370" height="225"
+							autohide="1"
+							autoplay="0"
+							color="0"
+							controls="2"
+							loop="0"
+							modestbranding="1"
+  							src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+  							frameborder="0">
+						</iframe>-->
 						<h3>Rockefeller Plaza NYC</h3>
 						<div class="bio-img">
-							<img src="./assets/Images/bio-1.jpg" alt="An image of Miami Beach">
+							<!--AFTER API WORKS WE CAN COMMENT-OUT IMAGE PLACEHOLDER-->
+							<img src="./assets/Images/bio-1.jpg" alt="People using Rockefeller Center's ice skating rink">
 						</div>
 					</div>
 					<div class="BIO-3">
-						<h3>Hollywood Sign Los Angeles </h3>
+						<!--HERE IS THE TASKMASTER CODE FROM MODULE 4 CONTAINED WITHIN THE BIO ARTICLE-->
+						<h3>Things to Do</h3>
+						<p>Click the button below to add to your list!</p>
+						<form id="task-form"></form>
+							<div class="form-group">
+								<input type="text" name="task-name" placeholder="Enter Task Name" />
+							</div>
+							<div class="form-group">
+								<select name="task-type" class="select-dropdown"> 
+								  <option value="" disabled selected>Pick a task type</option>
+								  <option value="Print">Print</option>
+								  <option value="Web">Web</option>
+								  <option value="Mobile">Mobile</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<button class="btn" id="save-task" type="submit">Add</button>
+						  	</div>
+						</form>
+						<form class="page-content" id="page-content">
+							<div class="task-list-wrapper">
+								<h3 class="list-title">Places I Want To Visit</h3>
+								 <!--add id attribute to ul-->
+								<ul class="task-list" id="tasks-to-do">
+									<!--<l1 class="task-item">A task is going to be added soon!</l1>-->
+								</ul>
+							</div>
+						</form>
 						<!--Photo by <a href="https://unsplash.com/@moritz_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Moritz Kindler</a> on <a href="https://unsplash.com/s/photos/bauhaus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
-						<div class="bio-img">
-							<img src="./assets/Images/moritz-kindler-YlSIQrITq1k-unsplash.jpg" alt="Connections between the artists and engineers of the Bauhaus">
+						<!--<div class="bio-img">
+							<img src="./assets/Images/moritz-kindler-YlSIQrITq1k-unsplash.jpg" alt="A view of the Hollywood sign from behind overlooking the valley at sunset">
 						</div>
-					</div>  
+					</div>--> 
 				</article>
-				<!--Here are image placeholders to link to the future project sites-->
+			<!--HERE IS THE COMMENTED-OUT TASKMASTER CODE FROM MODULE 4 MORE AS A STANDALONE ITEM IN GENERAL IT NEEDS ALOT OF JAVASCRIPT TO BE FUNCTIONAL-->
+			<!--<h2 class="page-title">Things to Do</h2>
+        	<p>Click the button below to add to your list!</p>
+        	<form id="task-form">
+            	<div class="form-group">
+                	<input type="text" name="task-name" placeholder="Enter Task Name" />
+            	</div>
+            	<div class="form-group">
+                	<select name="task-type" class="select-dropdown"> 
+                  	<option value="" disabled selected>Pick a task type</option>
+                  	<option value="Print">Print</option>
+                  	<option value="Web">Web</option>
+                  	<option value="Mobile">Mobile</option>
+                	</select>
+            	</div>
+            	<div class="form-group">
+              		<button class="btn" id="save-task" type="submit">Add</button>
+            	</div>
+        	</form> 
+				<main class="page-content" id="page-content">	
+					<section class="task-list-wrapper">
+						<h2 class="list-title">Places I Want To Go</h2>-->
+				 		<!--add id attribute to ul-->
+						<!--<ul class="task-list" id="tasks-to-do">-->
+							<!--<l1 class="task-item">A task is going to be added soon!</l1>-->
+						<!--</ul>
+					</section>
+				</main>-->
+
+				<!--Here are api and image placeholders-->
 				<article id="PROJECTS" class="lens-PROJECTS">
 					<h2>WEATHER</h2>
 					<div class="PROJECT-1">
-                        <!--update for api link-->
-						<a href="https://christilewis.github.io/run-buddy/">Air Quality</a>
+                        <!--update for Weather api link-->
+						<h3>Air Quality</h3>
+						<iframe 
+							id="player" 
+						   	type="text/html" 
+						   	width="370" height="225"
+							src="http://www.xyz.com"
+							frameborder="0">
+						</iframe>
+						<!--IMAGE CAN BE REMOVED AFTER WEATHER API WORKS-->
 						<div class="project-img">
-							<img src="./assets/Images/projects-1.JPG" alt="sneaker graphic in motion">
+							<img src="./assets/Images/projects-1.JPG" alt="runners in motion indicating the air quality is good for running outside">
 						</div>
 					</div>
-					<div class="PROJECT-2">
+					<!--COMMENTING OUT THESE DIV PLACEHOLDERS- MAY BE USED FOR TEXT OR ANYTHING ELSE-->
+					<!--<div class="PROJECT-2">-->
                          <!--update for api link-->
-						<a href="https://christilewis.github.io/Code-Refactor/">Temperature</a>
+						<!--<a href="https://ANYTHING.COM/">Temperature</a>
 						<div class="project-img">
 							<img src="./assets/Images/projects-2.JPG" alt="website and dev tools image">
 						</div>
-					</div>
-					<div class="PROJECT-3">
-						<h3>Wind Conditions</h3>
+					</div>-->
+					<!--<div class="PROJECT-3">
+						<h3>Wind Conditions</h3>-->
                          <!--update for api link-->
-						<div class="project-img">
+						<!--<div class="project-img">
 							<img src="./assets/Images/projects-3.JPG" alt="An Americana rooster weathervane on a roof peak">
 						</div>
-					</div>
+					</div>-->
 				</article>
 				<!--Here are image placeholders for the MONEY section aka contact section-->
 				<article id="CONTACT" class="lens-CONTACT">
@@ -111,39 +205,50 @@
                      <!--update for api link-->
 					<div class="CONTACT-1">
 						<h3>Any Currency to US Dollar</h3>
-						<p>What is my currency worth in US Dollars today? <br>
-							
+						<p>What is my currency worth in US Dollars today? <br>	
 						</p>
-						<!--<div class="contact-img">
-							<img src="./assets/Images/contact-1.jpg" alt="">
+						<iframe 
+							id="player" 
+						   	type="text/html" 
+						   	width="370" height="225"
+							src="http://www.xyz.com"
+							frameborder="0">
+						</iframe>
+						<div class="contact-img">
+							<img src="./assets/Images/contact-2.jpg" alt="image of multiple currencies">
 						</div>-->
 					</div>
-					<div class="CONTACT-2">
+					<!--COMMENTING OUT THESE DIV PLACEHOLDERS- MAY BE USED FOR TEXT OR ANYTHING ELSE-->
+					<!--<div class="CONTACT-2">
 						<h3>Euro to Dollar</h3>
 						<p>How much is a Euro worth today?</p>
 						<div class="contact-img">
 							<img src="./assets/Images/contact-2.jpg" alt="">
 						</div>
-					</div>
-					<div class="CONTACT-3">
+					</div>-->
+					
+					<!--<div class="CONTACT-3">
 						<h3>Dollar to Bitcoin</h3>
 						<p>How much is a Bitcoin worth today?</p>
 						<div class="contact-img">
 							<img src="./assets/Images/contact-3.jpg" alt="">
 						</div>
-					</div>
+					</div>-->
 				</article>
 		</section>
 
 		<!--PREP FOR MATERIALIZE-->
 		<!--JavaScript at end of body for optimized loading-->
+		<!--BELOW LINKS THE JS FILE NEEDED FOR MATERIALIZE-->
 		<script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+		<!--BELOW LINKS THE JS FILE FROM TASKINATOR NEEDED TO MAKE THE THINGS TO DO LIST INTERACTIVE AND FUNCTIONAL NEEDS ALOT OF WORK-->
+		<script src="./assets/js/script.js"></script> 
     
-    </body>
+	</body>
 
-    <!--INSERTING T_B TEST FOOTER HERE-->
-    <!--Here is a simple footer-->
-    <footer>
-        <h4> <span class="heart">❤️</span> Made with love by Travel Buddy</h4>
-    </footer>
+	<!--INSERTING T_B TEST FOOTER HERE-->
+	<!--Here is a simple footer-->
+	<footer>
+    	<h4> <span class="heart">❤️</span> Made with love by Travel Buddy</h4>
+	</footer>
 </html>
