@@ -1,3 +1,0 @@
-# travel_buddy
-
-readme
