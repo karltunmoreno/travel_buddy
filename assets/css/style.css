@@ -312,8 +312,28 @@
     background: #55ACEE;
     color: white;
   }
-  
+
+  .miami2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url("../images/miami2.jpg");
+    /* height removed NA flexbox */
+    background-size: cover;
+    /*Change b-p from center to 80% for final */
+    background-position: 80%;
+    /*Add b-attachment fixed to match image with header section */
+    background-attachment: fixed;
+    /* Add position relative to the hero section to position the hero-form. NA with 2.0 flexbox */
+    /* Add align-items flex-start for mediaquery version */
+    align-items: flex-start;
+}
   }
+
+
+
+
+  
   
   /* 2.4 - MEDIA QUERIES FOR TABLETS DOWN TO PHONES */
   @media screen and (max-width: 768px) {
