@@ -6,7 +6,7 @@
   
   :root {
     --primary-color: #fcb738;
-    --secondary-color: #024e76;
+    --secondary-color: #024876;
     --tertiary-color: #101213;
     --primary-color-transparent: rgba(175, 160, 192, 0.8);
     --secondary-color-transparent: rgba(2, 78, 118, 0.8);
@@ -365,3 +365,52 @@
       order: 3;
     }
   }
+  .miami2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image: url("images/miami2.jpg");
+    /* height removed NA flexbox */
+    background-size: cover;
+    /*Change b-p from center to 80% for final */
+    background-position: 80%;
+    /*Add b-attachment fixed to match image with header section */
+    background-attachment: fixed;
+    /* Add position relative to the hero section to position the hero-form. NA with 2.0 flexbox */
+    /* Add align-items flex-start for mediaquery version */
+    align-items: flex-start;
+  } 
+
+  /*weather style*/
+  .search-column{
+    background: linear-gradient( to left,  #00d2ff, #928bad);
+}
+
+.list-group-item{
+    line-height: 0.5;
+    border: none;
+}
+.card-body{
+    flex:auto
+}
+
+span.severe{
+    padding: 3px;
+    background-color: red;
+    color:white;
+}
+
+span.moderate{
+    padding: 3px;
+    background-color: yellow;
+}
+
+span.favorable{
+    padding: 3px;
+    background-color: green;
+    color:white;
+}
+.img-thumbnail{
+    height: 500px;
+    width: 100%;
+}
