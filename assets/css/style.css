@@ -16,9 +16,7 @@
     color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
     
-  }
-  images {
-      position: sticky; 
+ 
   }
   
   header {
@@ -31,12 +29,40 @@
     justify-content: space-between;
     align-items: left-right;
     flex-wrap: wrap;
-    position:sticky;
+    position:relative;
     position: -webkit-sticky;
     top: 0;
     z-index: 9999;
+    image-resolution: 800%;
   }
+
+  img.resize {
+    width: 1250px; /* you can use % */
+    height: auto;
+}
+
+
+
+
   
+.miami2 {
+  height: auto; 
+  width: auto; 
+  max-width: 1250px; 
+  max-height: 1250px;
+}
+
+.my-image {
+  width: 1250px;
+  height: 1250px;
+  object-fit: contain;
+}
+.miami2 {
+  width: 1250px;
+  height: 1250px;
+  object-fit: contain;
+}
+
   header h1 {
     display: flex;
     flex-wrap:wrap;
@@ -63,7 +89,7 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 25%;
+    width: 100%;
   }
   
   header nav {
@@ -145,7 +171,7 @@
   }
     .images {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         min-height:fit-content
        }
       
@@ -177,14 +203,15 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   height: 150vh;
+   height: 425vh;
    margin: 0;
   }
 
    .images {
     display: flex;
     align-items: center;
-    min-height:fit-content
+    min-height:fit-content;
+    height:max-content;
    }
 
   
