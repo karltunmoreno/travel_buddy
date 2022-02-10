@@ -5,27 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TRAVEL BUDDY</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/secondary-styles.css" />
-  <!-- Font HOLD STYLE BELOW,,,,REPLACE WITH MATERIALIZECSS) -->
+  <link href="./assets/css/secondary-styles.css"/>
+ <!-- Font HOLD STYLE BELOW,,,,REPLACE WITH MATERIALIZECSS) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Font HOLD STYLE ABOVE,,,REPLACE WITH MATERIALIZECSS) -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
   <header>
+    <div class="flex-row">
     <h1>
       <a href="">TRAVEL BUDDY
         <br>
-        YOUR CITY, YOUR MONEY, YOUR WEATHER.
+        Travel Smart!
         <br>
-        Just search and get result with this number #1 travel application.
+        Just search and get results in real time.
       </a>
     </h1>
     <div>
-      <nav>
+    <nav>
         <li>
           <a href="#HOME">HOME</a>
         </li>
@@ -35,92 +37,143 @@
         <li>
 
         <li>
-          <a href="#CURRENCY">CURRENCY</a>
+         <a href="#CURRENCY">CURRENCY</a>
         </li>
-
+        
         <li>
-          <a href="#THINGS-TO-DO">THINGS TO DO</a>
+        <a href="#THINGS-TO-DO">THINGS TO DO</a>
         </li>
-      </nav>
-    </div>
+        </nav>
+    </div> 
   </header>
-
+  
   <!-- "HOME" start - <section> -->
   <section id="HOME" class="intro">
     <div>
-      <strong>HOME</strong>
-      <h2 class="section-title primary-border">
-        <!--<img class="miami2" src="./images/miami2.jpg"> -->
-      </h2>
+        
+     <h2 class="section-title primary-border">
+      <strong >HOME</strong>
+     </h2>
+    
     </div>
-
-    </div>
-  </section>
+    
+      <img class="miami2" src="./assets/images/miami2.jpg">
+      
+   
+   
+</section>
   <!-- end "HOME" -->
 
 
-  <!-- "CITY" start -->
+<!-- "CITY" start -->
 
-  <!--Jumbotron for Title-->
-  <main class="container-fluid">
-    <div class="row">
-      <div class="col s3 search-column">
-        <form class="border p-2 " id="city-search-form">
-          <h4>Search for a City</h2>
-            <input id="city" type="text" autofocus="true" class="form-input card-panel blue lighten-4" />
-            <button class="btn waves-effect waves-light" type="submit" name="action">Search</button>
-        </form>
-        <div class="past-primary border" id="past-search-buttons"></div>
-      </div>
-      <div class="col s12">
-        <div class="row border selected-city" id="current-forecast">
-          <div class="col s6">
-            <h2 id="searched-city"></h2>
-            <div id="current-weather-container" class="list-group"></div>
-          </div>
-        </div>
-        <div class="row border" id="five-day-forecast">
-          <h2 class="col s6" id="forecast"></h2>
-          <div class="d-flex" id="fiveday-container"></div>
-        </div>
-      </div>
+           <!--Jumbotron for Title-->
+    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#31a7eb ;color: rgb(243, 236, 236);">
+        <h1> <strong>SEARCH FOR WEATHER</strong></h1>
     </div>
-  </main>
+    <div class="container">
+        <!--Row for searching a city-->
+        <div class="row">
+            <div class="col-sm-4 bg-light">
+                <!--Here we create an HTML form for handling the inputs-->
+                <h4 class="pt-1"><strong>Search for a City:</strong></h4>
+                <!--Here we create the text box for capturing the search city Name-->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
+                    <div class="input-group-append">
+                        <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <!--section for search city history-->
+                <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
+                <ul class="list-group">
 
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <hr>
-
-  <!-- "CURRENCY"  start -->
-  <section id="#CURRENCY">
-    <div class="flex-row" >
-      <h2 class="section-title primary-border" >
-        CURRENCY
-      </h2>
-      <div class="container" style="background-color: white";>
-        <div class="currency" >
-          <select id="from_currency" >
-            <option value="USD" selected >USD</option>
-
-          </select>
-          <input type="number" id="from_ammount" placeholder="0" value=1 />
+                </ul>
+            </div>   
+            <div class="col-sm-8">
+                <div class="row ml-2 border border-dark rounded">
+                    <div class="col-sm-12" id="current-weather">
+                        <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                        <p>Temperature:<span class="current" id="temperature"></span></p>
+                        <p>Humidity:<span class="current" id="humidity"></span></p> 
+                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                        <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+                    </div>
+                </div>
+                <!--Row for future data to be dumped here-->
+                <div class="col-sm-12" id ="future-weather">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="row text-light">
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <p id="fDate0"></p>
+                            <p id="fImg0"></p>
+                            <p>Temp:<span id="fTemp0"></span></p>
+                            <p>Humidity:<span id="fHumidity0"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <p id="fDate1"></p>
+                            <p id="fImg1"></p>
+                            <p>Temp:<span id="fTemp1"></span></p>
+                            <p>Humidity:<span id="fHumidity1"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                            <p id="fDate2"></p>
+                            <p id="fImg2"></p>
+                            <p>Temp:<span id="fTemp2"></span></p>
+                            <p>Humidity:<span id="fHumidity2"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                            <p id="fDate3"></p>
+                            <p id="fImg3"></p>
+                            <p>Temp:<span id="fTemp3"></span></p>
+                            <p>Humidity:<span id="fHumidity3"></span></p>
+                        </div>
+                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <p id="fDate4"></p>
+                            <p id="fImg4"></p>
+                            <p>Temp:<span id="fTemp4"></span></p>
+                            <p>Humidity:<span id="fHumidity4"></span></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-        <div class="middle">
-          <button id="exchange">
+    </div>
+		<link
+				rel="stylesheet"
+				type="text/css"
+				href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+			/>
+			
+		</footer>
+<!-- "WEATHER" end -->
+<br>
+<br>
+<br>
+
+<!-- "CURRENCY"  start -->
+<section id="#CURRENCY">
+    <div class="flex-row">
+          <h2 class="section-title primary-border">
+            CURRENCY
+          </h2>
+          <div class="container">
+            <div class="currency">
+            <select id="from_currency">
+           <option value="USD" selected>USD</option>
+           
+            </select>
+            <input type="number" id="from_ammount" placeholder="0" value=1 />
+            </div>
+            <div class="middle">
+            <button id="exchange">
             <i class="fas fa-exchange-alt"></i>
-          </button>
-          <div class="rate" id="rate">
-
-          </div>
-        </div>
-        <div class="currency">
-          <select id="to_currency">
-            <option value="AED">AED</option>
+            </button>
+            <div class="rate" id="rate"></div>
+            </div>
+            <div class="currency">
+            <select id="to_currency"><option value="AED">AED</option>
             <option value="ARS">ARS</option>
             <option value="AUD">AUD</option>
             <option value="BGN">BGN</option>
@@ -172,43 +225,36 @@
             <option value="UYU">UYU</option>
             <option value="VND">VND</option>
             <option value="ZAR">ZAR</option>
-          </select>
-          <input type="number" id="to_ammount" placeholder="0" />
-        </div>
-      </div> 
-    </div>
+            </select>
+            <input type="number" id="to_ammount" placeholder="0" />
+            </div>
+           </div>
+             
+           </div>
+</section>
+<!-- "CURRENCY"  END -->
 
-  </section>
-  <!-- "CURRENCY"  END -->
-
-  <!-- "THINGS TO DO"  START -->
-  <section id="#THINGS-TO-DO">
+<!-- "THINGS TO DO"  START -->
+<section id="#THINGS-TO-DO">
     <div class="flex-row">
-      <h2 class="section-title primary-border">
-        THINGS TO DO
-      </h2>
-    </div>
-  </section>
-  <!-- "THINGS TO DO"  END -->
+          <h2 class="section-title primary-border">
+            THINGS TO DO
+          </h2>
+        </div>
+     </section>
+<!-- "THINGS TO DO"  END -->
 
-  <br>
-  <!-- footer -->
+<br>
+   <!-- footer -->
   <footer>
     <h2>UM CODING BOOTCAMP 2022.</h2>
   </footer>
-
-
-
   <!--jQuery THESE BOOTSTRAP CODE HAS TO BE REPLACED..JS-->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
   <!--Code to Javascript File-->
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/function.js"></script>
-
+  <script src="./assets/js/js/script.js"></script>
+  <script  src="./assets/js/js/function.js"></script>
 </body>
 
 </html>
