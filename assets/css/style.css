@@ -23,17 +23,15 @@
   
   header {
     background-color: #1c89d1;
-    padding: 25px 25px;
-    background-position: 80%;
+    padding: 25px;
+    background-position: 100%;
     background-attachment:fixed;
     background-size: cover;
     display: flex;
     justify-content: space-between;
     align-items: left-right;
     flex-wrap: wrap;
-    position:sticky;
-    position: -webkit-sticky;
-    top: 0;
+    top: 10px;
     z-index: 9999;
   }
   
