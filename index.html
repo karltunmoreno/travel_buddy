@@ -12,242 +12,214 @@
   <!-- Font HOLD STYLE ABOVE,,,REPLACE WITH MATERIALIZECSS) -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
   <link rel="stylesheet" href="css/style.css">
+  <!-- MATERIALIZECSS place holder -->
+  
+
 
 </head>
 
 <body>
-  <header>
-    <div class="flex-row">
+ <img class="backgroundImage" src="./assets/images/miami2.jpg">         <!-- Navbar (placed at the bottom of the header image) -->
+<header>
+
+
+  <div class="backgroundColor"></div>
+    
+  
+  
+  <div class="flex-row">
+    <div class="header-container">
     <h1>
       <a href="">TRAVEL BUDDY
         <br>
-        Travel Smart!
+        
         <br>
-        Just search and get results in real time.
+        "travel smart"
       </a>
     </h1>
-    <div>
-    <nav>
-        <li>
-          <a href="#HOME">HOME</a>
-        </li>
-
-        <li>
-          <a href="#WEATHER">WEATHER</a>
-        <li>
-
-        <li>
-         <a href="#CURRENCY">CURRENCY</a>
-        </li>
-        
-        <li>
-        <a href="#THINGS-TO-DO">THINGS TO DO</a>
-        </li>
-        </nav>
-    </div> 
-  </header>
+    <img class="logopicture" src="./assets/images/travel-buddy.png" alt="city picture">
+  </div>
+  <nav class="navbar">
+<ul>
+  <li>
+    WEATHER
+  </li>
+</ul>
+<ul>
+  <li>
+    CURRENCY
+  </li>
+</ul>
+</nav>
+  <div>
+<!--Jumbotron for Title-->
+        <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#31a7eb ;color: rgb(243, 236, 236);">
+          <h1> <strong>  WEATHER AND CURRENCY IN REAL TIME</strong></h1>
+      </div>
+      <div class="container">
+          <!--Row for searching a city-->
+          <div class="row">
+              <div class="col-sm-4 bg-light">
+                  <!--Here we create an HTML form for handling the inputs-->
+                  <h4 class="pt-1"><strong>Search for a City:</strong></h4>
+                  <!--Here we create the text box for capturing the search city Name-->
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
+                      <div class="input-group-append">
+                          <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
+                      </div>
+                  </div>
+                  <!--section for search city history-->
+                  <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
+                  <ul class="list-group">
   
-  <!-- "HOME" start - <section> -->
-  <section id="HOME" class="intro">
-    <div>
-        
-     <h2 class="section-title primary-border">
-      <strong >HOME</strong>
-     </h2>
-    
-    </div>
-    
-      <img class="miami2" src="./assets/images/miami2.jpg">
-      
-   
-   
-</section>
-  <!-- end "HOME" -->
-
-
-<!-- "CITY" start -->
-
-           <!--Jumbotron for Title-->
-    <div class="jumbotron container-fluid mt-2 text-center p-2" style="background-color:#31a7eb ;color: rgb(243, 236, 236);">
-        <h1> <strong>SEARCH FOR WEATHER</strong></h1>
-    </div>
-    <div class="container">
-        <!--Row for searching a city-->
-        <div class="row">
-            <div class="col-sm-4 bg-light">
-                <!--Here we create an HTML form for handling the inputs-->
-                <h4 class="pt-1"><strong>Search for a City:</strong></h4>
-                <!--Here we create the text box for capturing the search city Name-->
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control"id="search-city" aria-label="City Search" aria-describedby="search-button">
-                    <div class="input-group-append">
-                        <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-                <!--section for search city history-->
-                <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
-                <ul class="list-group">
-
-                </ul>
-            </div>   
-            <div class="col-sm-8">
-                <div class="row ml-2 border border-dark rounded">
-                    <div class="col-sm-12" id="current-weather">
-                        <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
-                        <p>Temperature:<span class="current" id="temperature"></span></p>
-                        <p>Humidity:<span class="current" id="humidity"></span></p> 
-                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
-                        <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
-                    </div>
-                </div>
-                <!--Row for future data to be dumped here-->
-                <div class="col-sm-12" id ="future-weather">
-                    <h3>5-Day Forecast:</h3>
-                    <div class="row text-light">
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                            <p id="fDate0"></p>
-                            <p id="fImg0"></p>
-                            <p>Temp:<span id="fTemp0"></span></p>
-                            <p>Humidity:<span id="fHumidity0"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                            <p id="fDate1"></p>
-                            <p id="fImg1"></p>
-                            <p>Temp:<span id="fTemp1"></span></p>
-                            <p>Humidity:<span id="fHumidity1"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                            <p id="fDate2"></p>
-                            <p id="fImg2"></p>
-                            <p>Temp:<span id="fTemp2"></span></p>
-                            <p>Humidity:<span id="fHumidity2"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                            <p id="fDate3"></p>
-                            <p id="fImg3"></p>
-                            <p>Temp:<span id="fTemp3"></span></p>
-                            <p>Humidity:<span id="fHumidity3"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                            <p id="fDate4"></p>
-                            <p id="fImg4"></p>
-                            <p>Temp:<span id="fTemp4"></span></p>
-                            <p>Humidity:<span id="fHumidity4"></span></p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-		<link
-				rel="stylesheet"
-				type="text/css"
-				href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
-			/>
-			
-		</footer>
-<!-- "WEATHER" end -->
+                  </ul>
+              </div>   
+              <div class="col-sm-8">
+                  <div class="row ml-2 border border-dark rounded">
+                      <div class="col-sm-12" id="current-weather">
+                          <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
+                          <p>Temperature:<span class="current" id="temperature"></span></p>
+                          <p>Humidity:<span class="current" id="humidity"></span></p> 
+                          <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
+                          <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
+                      </div>
+                  </div>
+                  <!--Row for future data to be dumped here-->
+                  <div class="col-sm-12" id ="future-weather">
+                      <h3>5-Day Forecast:</h3>
+                      <div class="row text-light">
+                          <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                              <p id="fDate0"></p>
+                              <p id="fImg0"></p>
+                              <p>Temp:<span id="fTemp0"></span></p>
+                              <p>Humidity:<span id="fHumidity0"></span></p>
+                          </div>
+                          <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                              <p id="fDate1"></p>
+                              <p id="fImg1"></p>
+                              <p>Temp:<span id="fTemp1"></span></p>
+                              <p>Humidity:<span id="fHumidity1"></span></p>
+                          </div>
+                          <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                              <p id="fDate2"></p>
+                              <p id="fImg2"></p>
+                              <p>Temp:<span id="fTemp2"></span></p>
+                              <p>Humidity:<span id="fHumidity2"></span></p>
+                          </div>
+                          <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
+                              <p id="fDate3"></p>
+                              <p id="fImg3"></p>
+                              <p>Temp:<span id="fTemp3"></span></p>
+                              <p>Humidity:<span id="fHumidity3"></span></p>
+                          </div>
+                          <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                              <p id="fDate4"></p>
+                              <p id="fImg4"></p>
+                              <p>Temp:<span id="fTemp4"></span></p>
+                              <p>Humidity:<span id="fHumidity4"></span></p>
+                          </div>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <link
+          rel="stylesheet"
+          type="text/css"
+          href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+        />
 <br>
 <br>
 <br>
-
 <!-- "CURRENCY"  start -->
 <section id="#CURRENCY">
-    <div class="flex-row">
-          <h2 class="section-title primary-border">
-            CURRENCY
-          </h2>
-          <div class="container">
-            <div class="currency">
-            <select id="from_currency">
-           <option value="USD" selected>USD</option>
+  <div class="flex-row">
+        <h2 class="section-title primary-border">
+          CURRENCY
+        </h2>
+        <div class="container">
+          <div class="currency">
+          <select id="from_currency">
+         <option value="USD" selected>USD</option>
+         
+          </select>
+          <input type="number" id="from_ammount" placeholder="0" value=1 />
+          </div>
+          <div class="middle">
+          <button id="exchange">
+          <i class="fas fa-exchange-alt"></i>
+          </button>
+          <div class="rate" id="rate"></div>
+          </div>
+          <div class="currency">
+          <select id="to_currency"><option value="AED">AED</option>
+          <option value="ARS">ARS</option>
+          <option value="AUD">AUD</option>
+          <option value="BGN">BGN</option>
+          <option value="BRL">BRL</option>
+          <option value="BSD">BSD</option>
+          <option value="CAD">CAD</option>
+          <option value="CHF">CHF</option>
+          <option value="CLP">CLP</option>
+          <option value="CNY">CNY</option>
+          <option value="COP">COP</option>
+          <option value="CZK">CZK</option>
+          <option value="DKK">DKK</option>
+          <option value="DOP">DOP</option>
+          <option value="EGP">EGP</option>
+          <option value="EUR">EUR</option>
+          <option value="FJD">FJD</option>
+          <option value="GBP">GBP</option>
+          <option value="GTQ">GTQ</option>
+          <option value="HKD">HKD</option>
+          <option value="HRK">HRK</option>
+          <option value="HUF">HUF</option>
+          <option value="IDR">IDR</option>
+          <option value="ILS">ILS</option>
+          <option value="INR" selected>INR</option>
+          <option value="ISK">ISK</option>
+          <option value="JPY">JPY</option>
+          <option value="KRW">KRW</option>
+          <option value="KZT">KZT</option>
+          <option value="MXN">MXN</option>
+          <option value="MYR">MYR</option>
+          <option value="NOK">NOK</option>
+          <option value="NZD">NZD</option>
+          <option value="PAB">PAB</option>
+          <option value="PEN">PEN</option>
+          <option value="PHP">PHP</option>
+          <option value="PKR">PKR</option>
+          <option value="PLN">PLN</option>
+          <option value="PYG">PYG</option>
+          <option value="RON">RON</option>
+          <option value="RUB">RUB</option>
+          <option value="SAR">SAR</option>
+          <option value="SEK">SEK</option>
+          <option value="SGD">SGD</option>
+          <option value="THB">THB</option>
+          <option value="TRY">TRY</option>
+          <option value="TWD">TWD</option>
+          <option value="UAH">UAH</option>
+          <option value="USD">USD</option>
+          <option value="UYU">UYU</option>
+          <option value="VND">VND</option>
+          <option value="ZAR">ZAR</option>
+          </select>
+          <input type="number" id="to_ammount" placeholder="0" />
+          </div>
+         </div>
            
-            </select>
-            <input type="number" id="from_ammount" placeholder="0" value=1 />
-            </div>
-            <div class="middle">
-            <button id="exchange">
-            <i class="fas fa-exchange-alt"></i>
-            </button>
-            <div class="rate" id="rate"></div>
-            </div>
-            <div class="currency">
-            <select id="to_currency"><option value="AED">AED</option>
-            <option value="ARS">ARS</option>
-            <option value="AUD">AUD</option>
-            <option value="BGN">BGN</option>
-            <option value="BRL">BRL</option>
-            <option value="BSD">BSD</option>
-            <option value="CAD">CAD</option>
-            <option value="CHF">CHF</option>
-            <option value="CLP">CLP</option>
-            <option value="CNY">CNY</option>
-            <option value="COP">COP</option>
-            <option value="CZK">CZK</option>
-            <option value="DKK">DKK</option>
-            <option value="DOP">DOP</option>
-            <option value="EGP">EGP</option>
-            <option value="EUR">EUR</option>
-            <option value="FJD">FJD</option>
-            <option value="GBP">GBP</option>
-            <option value="GTQ">GTQ</option>
-            <option value="HKD">HKD</option>
-            <option value="HRK">HRK</option>
-            <option value="HUF">HUF</option>
-            <option value="IDR">IDR</option>
-            <option value="ILS">ILS</option>
-            <option value="INR" selected>INR</option>
-            <option value="ISK">ISK</option>
-            <option value="JPY">JPY</option>
-            <option value="KRW">KRW</option>
-            <option value="KZT">KZT</option>
-            <option value="MXN">MXN</option>
-            <option value="MYR">MYR</option>
-            <option value="NOK">NOK</option>
-            <option value="NZD">NZD</option>
-            <option value="PAB">PAB</option>
-            <option value="PEN">PEN</option>
-            <option value="PHP">PHP</option>
-            <option value="PKR">PKR</option>
-            <option value="PLN">PLN</option>
-            <option value="PYG">PYG</option>
-            <option value="RON">RON</option>
-            <option value="RUB">RUB</option>
-            <option value="SAR">SAR</option>
-            <option value="SEK">SEK</option>
-            <option value="SGD">SGD</option>
-            <option value="THB">THB</option>
-            <option value="TRY">TRY</option>
-            <option value="TWD">TWD</option>
-            <option value="UAH">UAH</option>
-            <option value="USD">USD</option>
-            <option value="UYU">UYU</option>
-            <option value="VND">VND</option>
-            <option value="ZAR">ZAR</option>
-            </select>
-            <input type="number" id="to_ammount" placeholder="0" />
-            </div>
-           </div>
-             
-           </div>
+         </div>
 </section>
+ 
 <!-- "CURRENCY"  END -->
-
-<!-- "THINGS TO DO"  START -->
-<section id="#THINGS-TO-DO">
-    <div class="flex-row">
-          <h2 class="section-title primary-border">
-            THINGS TO DO
-          </h2>
-        </div>
-     </section>
-<!-- "THINGS TO DO"  END -->
-
-<br>
+</header>
    <!-- footer -->
   <footer>
-    <h2>UM CODING BOOTCAMP 2022.</h2>
+    <h2>'''''BY THE UNIVERSITY OF MIAMI CODING G9 WEATHER / CURRENCY EXCHANGE UPDATES 2022.''''''
+    </h2>
   </footer>
   <!--jQuery THESE BOOTSTRAP CODE HAS TO BE REPLACED..JS-->
   <script src="https://code.jquery.com/jquery.js"></script>

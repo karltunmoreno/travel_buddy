@@ -15,13 +15,19 @@
   body {
     color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
+   
     
  
   }
-  
+  .backgroundColor{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #00d2ff;
+    opacity: .5;
+    z-index: -1;
+  }
   header {
-    background-color: #1c89d1;
-    padding: 25px;
     background-position: 100%;
     background-attachment:fixed;
     background-size: cover;
@@ -36,12 +42,21 @@
     image-resolution: 800%;
   }
 
-  img.resize {
-    width: 1250px; /* you can use % */
-    height: auto;
+.backgroundImage {
+  position: absolute;
+  width: 100%;
 }
 
+.logopicture {
+  height: 250px;
+  width: 400px;
+  margin: 0 auto;
+  margin-right: 15px;
+} 
 
+.header-container {
+  display: flex;
+}
 
 
   
@@ -52,16 +67,7 @@
   max-height: 1250px;
 }
 
-.my-image {
-  width: 1250px;
-  height: 1250px;
-  object-fit: contain;
-}
-.miami2 {
-  width: 1250px;
-  height: 1250px;
-  object-fit: contain;
-}
+
 
   header h1 {
     display: flex;
@@ -91,6 +97,20 @@
     display: block;
     width: 100%;
   }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    background-color: #eff31f;
+    font-style: var(--secondary-color);
+  }
+    nav li {
+      font-style: var(--secondary-color);
+    
+    }
   
   header nav {
     margin: 7px 0;
@@ -109,9 +129,7 @@
   }
   
   header nav ul li a {
-    padding: 10px 15px;
-    font-weight: 200;
-    font-size: 1.55vw;
+    
     text-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
   
@@ -190,22 +208,26 @@
     background-color: rgb(70, 223, 10);
     text-decoration: underline;
   }
+
+  .footer h2 {
+    content: center;
+  }
   
   /* Code By Webdevtrick ( https://webdevtrick.com ) */
   @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
   * {
    box-sizing: border-box;
   }
-  body {
+/* body {
    background: linear-gradient(to bottom, #09e4e4 0%, #aff2ff 50%, #50dcff 50%, #50dcff 100%);
    font-family: 'Muli', sans-serif;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   height: 425vh;
+   height: 325vh;
    margin: 0;
-  }
+  } */
 
    .images {
     display: flex;
@@ -340,7 +362,7 @@ span.favorable{
       flex: 1 100%;
     }
   
-    footer h2, footer div {
+    .footer {
       text-align: center;
       width: 100%;
     }
