@@ -1,3 +1,5 @@
+![Ss](https://karltunmoreno.github.io/My-Portfolio/assets/images/7777.jpg)
+
 # Travel Buddy https://karltunmoreno.github.io/travel_buddy/
 * GIVEN there are international tourists in many cities, the weather and currency exchange rate may influence their attire, activities, and budget.
 ​
