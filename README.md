@@ -1,4 +1,4 @@
-# Travel Buddy https://blerandism.github.io/travel_buddy/
+# Travel Buddy https://karltunmoreno.github.io/travel_buddy/
 * GIVEN there are international tourists in many cities, the weather and currency exchange rate may influence their attire, activities, and budget.
 ​
 ## Description of the MVP
