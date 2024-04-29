@@ -9,7 +9,7 @@
 * WHEN the user selects from a drop down menu of currencies, the user sees its value compared to one US dollar.
 * WHEN the user inputs the cost of something in US Dollars, the user sees the value in the selected currency.
 ​
-## Project Requirements as a Description
+
 ​
 ### Use a CSS framework other than Bootstrap.
     * Materialize has been implemented with custom css support files
